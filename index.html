@@ -3,69 +3,64 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Markdown to HTML Converter</title>
+    <title>Product Sales</title>
     <style>
         body {
             font-family: Arial, sans-serif;
             margin: 20px;
         }
-        #markdown-output {
-            border: 1px solid #ccc;
-            padding: 20px;
-            background-color: #f9f9f9;
+        #product-sales {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
         }
-        pre code {
-            padding: 10px;
-            background-color: #272822;
-            color: #f8f8f2;
-            overflow-x: auto;
+        #product-sales th, #product-sales td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        #product-sales th {
+            background-color: #f2f2f2;
         }
     </style>
 </head>
 <body>
-    <h1>Markdown to HTML Converter</h1>
-    <div id="markdown-output" role="main" aria-label="Markdown content"></div>
+    <h1>Product Sales</h1>
+    <table id="product-sales">
+        <thead>
+            <tr>
+                <th>Product</th>
+                <th>Total Sales ($)</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Product A</td>
+                <td>100.50</td>
+            </tr>
+            <tr>
+                <td>Product B</td>
+                <td>200.75</td>
+            </tr>
+            <tr>
+                <td>Product C</td>
+                <td>150.25</td>
+            </tr>
+        </tbody>
+    </table>
+    <h2 id="total-sales">Total Sales: </h2>
 
-    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/highlight.js/lib/core.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/highlight.js/lib/languages/javascript.min.js"></script>
     <script>
-        document.addEventListener("DOMContentLoaded", () => {
-            const mdContent = `
-# Sample GitHub Pages Project
-
-This is a sample project demonstrating a static GitHub Pages site.
-
-## Features
-- Responsive layout
-- Accessible design with semantic HTML and ARIA labels
-- Lightweight CSS and vanilla JavaScript
-- Fully self-contained, no external dependencies
-
-## Usage
-Open \`index.html\` in a browser or deploy via GitHub Pages.
-
-## Local Development
-No build tools required. Just edit \`index.html\` and open in a browser.
-
-## Deployment
-Push to a GitHub repository and enable GitHub Pages in repository settings.
-
-Future Improvements - Include new features and updates as demonstrated.
-
-## License
-MIT License [placeholder]
-            `;
-
-            const htmlContent = marked(mdContent, {
-                highlight: function(code, lang) {
-                    const validLang = hljs.getLanguage(lang) ? lang : 'plaintext';
-                    return hljs.highlight(validLang, code).value;
-                }
-            });
-
-            document.querySelector("#markdown-output").innerHTML = htmlContent;
-        });
+        (function() {
+            // Calculate and display the total sales
+            const rows = [...document.querySelectorAll("#product-sales tbody tr td:last-child")];
+            const sum = rows.reduce((acc, cell) => acc + parseFloat(cell.textContent), 0);
+            document.getElementById("total-sales").textContent = `Total Sales: $${sum.toFixed(2)}`;
+        })();
     </script>
+    <div id="markdown-output">
+        <h3>Sample Markdown</h3>
+        <p>This is a paragraph converted from Markdown.</p>
+    </div>
 </body>
 </html>

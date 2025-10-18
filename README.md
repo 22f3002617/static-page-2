@@ -1,50 +1,37 @@
-# Markdown to HTML Converter
+# Product Sales Tracker
 
 ## Description
-
-This project provides a static page that converts a Markdown file into HTML using the `marked` library and highlights code blocks using `highlight.js`. The rendered HTML is displayed inside the `#markdown-output` element.
+This project is a demonstration of a table listing product sales with a dynamically calculated total sales display. It uses vanilla JavaScript and simple HTML/CSS, structured to work seamlessly with GitHub Pages.
 
 ## Features
-
-- Converts Markdown text to HTML dynamically.
-- Utilizes `marked` for Markdown processing.
-- Syntax highlights code blocks using `highlight.js`.
-- Responsive layout with basic styling.
-- Accessible design using semantic HTML and ARIA roles.
+- Displays a table of products and their total sales.
+- Dynamically calculates and updates total sales from the product list.
+- Ensures that total sales are accurately summed and displayed.
+- Includes a markdown-rendered section for additional demonstration content.
 
 ## Usage
-
-1. Open `index.html` in a browser.
-2. View the converted HTML content displayed within the page.
+- Open `index.html` in a web browser to view the product sales table.
+- Modify the product rows directly in the HTML to add or change product data.
 
 ## Local Development
+- No build tools or frameworks are necessary. Simply open `index.html` in a browser to view changes live.
 
-- Clone the repository to your local machine.
-- Open `index.html` directly in your browser to test changes.
-- All logic and styling reside within `index.html`.
+## Deployment
+1. Push the files to a GitHub repository.
+2. Enable GitHub Pages in the repository settings.
+3. Visit the GitHub Pages URL to view your site online.
 
-## GitHub Pages Deployment
-
-- Push the code to a GitHub repository.
-- Go to repository settings and enable GitHub Pages.
-- The page will be live at `https://<username>.github.io/<repository>`.
-
-## Accessibility and Fallback
-
-- Uses semantic HTML and ARIA attributes for improved accessibility.
-- Provides default content directly within `index.html`.
+## Accessibility and Fallbacks
+- The page uses semantic HTML for better accessibility.
+- The table is responsive and readable on various devices.
 
 ## Future Improvements
-
-- Include support for additional Markdown features.
-- Enhance styling for better readability and user interaction.
-- Add options for file input and dynamic URL-based content loading.
-
-## License
-
-MIT License [placeholder]
+- Add input fields for dynamic product and sales update.
+- Enhance styling with more sophisticated CSS or CSS frameworks.
 
 ## Assumptions
+- Sales data is stored directly in the HTML without the need for dynamic fetching.
+- The scope is educational, focusing on basic DOM manipulation and calculation.
 
-- The input Markdown content is hard-coded within the `index.html`.
-- The project assumes no need for build tools or complex setup.
+## License
+MIT License [placeholder]
