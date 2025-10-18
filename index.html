@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Markdown to HTML Converter</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        #markdown-output {
+            border: 1px solid #ccc;
+            padding: 20px;
+            background-color: #f9f9f9;
+        }
+        pre code {
+            padding: 10px;
+            background-color: #272822;
+            color: #f8f8f2;
+            overflow-x: auto;
+        }
+    </style>
+</head>
+<body>
+    <h1>Markdown to HTML Converter</h1>
+    <div id="markdown-output" role="main" aria-label="Markdown content"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/highlight.js/lib/core.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/highlight.js/lib/languages/javascript.min.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const mdContent = `
+# Sample GitHub Pages Project
+
+This is a sample project demonstrating a static GitHub Pages site.
+
+## Features
+- Responsive layout
+- Accessible design with semantic HTML and ARIA labels
+- Lightweight CSS and vanilla JavaScript
+- Fully self-contained, no external dependencies
+
+## Usage
+Open \`index.html\` in a browser or deploy via GitHub Pages.
+
+## Local Development
+No build tools required. Just edit \`index.html\` and open in a browser.
+
+## Deployment
+Push to a GitHub repository and enable GitHub Pages in repository settings.
+
+Future Improvements - Include new features and updates as demonstrated.
+
+## License
+MIT License [placeholder]
+            `;
+
+            const htmlContent = marked(mdContent, {
+                highlight: function(code, lang) {
+                    const validLang = hljs.getLanguage(lang) ? lang : 'plaintext';
+                    return hljs.highlight(validLang, code).value;
+                }
+            });
+
+            document.querySelector("#markdown-output").innerHTML = htmlContent;
+        });
+    </script>
+</body>
+</html>
