@@ -3,64 +3,66 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Product Sales</title>
+    <title>Product Sales Tracker</title>
     <style>
+        /* Placeholder for MIT License */
         body {
             font-family: Arial, sans-serif;
-            margin: 20px;
+            padding: 20px;
+            max-width: 800px;
+            margin: auto;
         }
-        #product-sales {
+        table {
             width: 100%;
             border-collapse: collapse;
             margin-bottom: 20px;
         }
-        #product-sales th, #product-sales td {
+        th, td {
             border: 1px solid #ddd;
-            padding: 8px;
-            text-align: left;
+            padding: 10px;
+            text-align: center;
         }
-        #product-sales th {
-            background-color: #f2f2f2;
+        th {
+            background-color: #f4f4f4;
         }
     </style>
 </head>
 <body>
-    <h1>Product Sales</h1>
+    <h1>Product Sales Tracker</h1>
     <table id="product-sales">
         <thead>
             <tr>
-                <th>Product</th>
-                <th>Total Sales ($)</th>
+                <th>Product Name</th>
+                <th>Total Sales</th>
             </tr>
         </thead>
         <tbody>
             <tr>
                 <td>Product A</td>
-                <td>100.50</td>
+                <td>150.00</td>
             </tr>
             <tr>
                 <td>Product B</td>
-                <td>200.75</td>
+                <td>200.00</td>
             </tr>
             <tr>
                 <td>Product C</td>
-                <td>150.25</td>
+                <td>100.00</td>
             </tr>
         </tbody>
     </table>
-    <h2 id="total-sales">Total Sales: </h2>
-
+    <div id="total-sales">
+        Total Sales: $<span id="total">0.00</span>
+    </div>
+    <div id="markdown-output">
+        <h2>Product Sales Overview</h2>
+    </div>
     <script>
         (function() {
-            // Calculate and display the total sales
             const rows = [...document.querySelectorAll("#product-sales tbody tr td:last-child")];
             const sum = rows.reduce((acc, cell) => acc + parseFloat(cell.textContent), 0);
-            document.getElementById("total-sales").textContent = `Total Sales: $${sum.toFixed(2)}`;
+            document.getElementById("total").textContent = sum.toFixed(2);
         })();
     </script>
-    <div id="markdown-output">
-        <h3>Sample Markdown</h3>
-        <p>This is a paragraph converted from Markdown.</p>
-    </div>
 </body>
 </html>
