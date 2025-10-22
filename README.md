@@ -1,33 +1,31 @@
 # Product Sales Tracker
 
 ## Description
-This project is a simple web application designed to track product sales. It displays a table with products and their respective sales totals and calculates the overall sales sum.
+This project is a simple static web page that displays a table of products and their total sales using Bootstrap styling. It dynamically calculates the total sales and displays the result on the page.
 
 ## Features
-- Displays a table listing products and their total sales.
-- Automatically calculates and displays the total sales.
-- Responsive HTML and inline CSS for styling.
-- Works offline due to no external dependencies.
-- Includes a section for markdown content.
+- A responsive table showing products and their total sales.
+- Dynamic calculation and display of the sum of sales.
+- Simple, clean design using vanilla JavaScript for interactivity.
 
 ## Usage
-To use the app, open the `index.html` file in any web browser. The product sales table will render with the given data, and the total sales will be calculated and displayed automatically.
+To use this application, open the `index.html` file in any web browser. The page will automatically display the table of product sales and the calculated total.
 
 ## Local Development
-Simply edit the `index.html` file to modify content or style. Reloading the file in a browser will reflect changes instantly.
+No special tools are required for local development. Simply edit the `index.html` file and view the changes in a web browser.
 
 ## Deployment
-1. Commit the files to a new GitHub repository.
-2. Go to the repository settings on GitHub.
-3. Enable GitHub Pages from the settings and select the main branch.
+To deploy this app on GitHub Pages:
+1. Push the project to a GitHub repository.
+2. Go to the repository's settings.
+3. Enable GitHub Pages and select the main branch as the source.
 
 ## Accessibility and Fallback
-The application includes semantic HTML elements and does not rely on external JavaScript libraries, ensuring functionality even if scripts are disabled. All data is embedded within the HTML itself.
+The application uses semantic HTML for improved accessibility. All functionality is available with basic JavaScript that requires no external libraries.
 
 ## Future Improvements
-- Add functionality to dynamically update sales data.
-- Improve styling and user interface.
-- Include data input features for sales tracking.
+- Integrate a backend for dynamic data retrieval.
+- Improve accessibility features with ARIA roles.
 
 ## License
 MIT License [placeholder]
